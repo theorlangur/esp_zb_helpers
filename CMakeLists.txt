@@ -13,6 +13,7 @@ idf_component_register(SRCS
                     src/zbh_apsde.cpp
                     src/zbh_apsde_binds.cpp
                     INCLUDE_DIRS "include"
+                    REQUIRES esp_generic_lib
 )
 
 #for being able to compile with clang
