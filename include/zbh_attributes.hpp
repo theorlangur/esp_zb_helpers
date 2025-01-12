@@ -85,7 +85,7 @@ namespace zb
 
         using ZCLResult = std::expected<esp_zb_zcl_status_t, esp_zb_zcl_status_t>;
         using ESPResult = std::expected<esp_err_t, esp_err_t>;
-        ZCLResult Set(const T &v, bool dbg = false)
+        static ZCLResult Set(const T &v, bool dbg = false)
         {
 #ifndef NDEBUG
             if (dbg)
@@ -110,7 +110,7 @@ namespace zb
             return ESP_ZB_ZCL_STATUS_SUCCESS;
         }
 
-        ESPResult Report(DestAddr addr = {})
+        static ESPResult Report(DestAddr addr = {})
         {
             esp_zb_zcl_report_attr_cmd_t report_attr_cmd;
             report_attr_cmd.address_mode = addr.mode;
